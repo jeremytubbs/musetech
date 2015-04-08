@@ -1,0 +1,105 @@
+@import "uikit/uikit";
+
+.height-20 {
+    height: 20vh;
+    min-height: 120px;
+}
+
+.height-30 {
+    height: 30vh;
+    min-height: 180px;
+}
+
+.height-40 {
+    height: 40vh;
+    min-height: 240px;
+}
+
+.height-50 {
+    height: 50vh;
+    min-height: 300px;
+}
+
+.height-60 {
+    height: 50vh;
+    min-height: 360px;
+}
+
+.height-70 {
+    height: 70vh;
+    min-height: 420px;
+}
+
+.height-80 {
+    height: 80vh;
+    min-height: 480px;
+}
+
+.landing {
+    background-image: -webkit-linear-gradient(-45deg, #d0d8dd, #96a8b1);
+}
+
+.logo {
+    svg {
+        path {
+            fill: rgba(0,0,0,0.7);
+        }
+        height: 25vh;
+        width: 100%;
+    }
+}
+
+.logo-secondary {
+    svg {
+        path {
+            fill: rgba(0,0,0,0.7);
+        }
+        height: 10vh;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-text {
+        margin-top: 0 !important;
+        font-size: $base-h2-font-size;
+        line-height: $base-h2-line-height;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        margin-top: 0 !important;
+        font-size: $base-h3-font-size;
+        line-height: $base-h3-line-height;
+    }
+}
+
+.mt-navbar {
+    position: relative;
+    top: 0;
+    z-index: 9999;
+    background: none;
+}
+
+.mt-header {
+    position: relative;
+    top: -40px;
+}
+
+
+.uk-badge {
+    font-weight: normal;
+}
+
+
+th {
+    border-bottom: 2px solid #EEE;
+}
+
+tr {
+    border-bottom: 1px solid #EEE;
+    &:last-child {
+        border-bottom: none;
+    }
+}

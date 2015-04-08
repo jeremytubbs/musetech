@@ -52,7 +52,8 @@
 				<article class="uk-article">
 					<p class="uk-article-lead">Welcome to the #musetech Slack community.</p>
 					<p>Using Slack allows teams to chat via real-time messaging and search up 10,000 archived messages for free. Slack also allows for some excellent integrations; all tweets tagged #musetech are rebroadcast in our 'news' channel.</p>
-					<p>This site also features a searchable registry of #musetech projects available on Github.</p>
+					<p>This site also features a searchable registry of #musetech projects available on Github. Search inspired by: <a href="https://github.com/MuseCompNet/muse-tech-central">MuseCompNet/muse-tech-central</a>.</p>
+					<p>Site created by <a href="https://twitter.com/jeremytubbs">@JeremyTubbs</a> a member of the <a href="http://lab.imamuseum.org/about/">IMA Lab Team</a>.</p>
 				</article>
 			</div>
 		</div>

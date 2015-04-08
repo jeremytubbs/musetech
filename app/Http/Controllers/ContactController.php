@@ -21,13 +21,21 @@ class ContactController extends Controller {
 			'the_message' => $request->get('message')
 		];
 
-		\Mail::queue('emails.contact', $data, function($message)
-	    {
-	        $message->to(env('MAIL_USERNAME'), env('MAIL_NAME'))->subject('Contact Form');
-	    });
+		try
+		{
+			\Mail::send('emails.contact', $data, function($message)
+		    {
+		        $message->to(env('MAIL_USERNAME'), env('MAIL_NAME'))->subject('Contact Form');
+		    });
 
-	    flash()->message('Thank you.');
-		return redirect()->back();
+	    	flash()->message('Thank you.');
+			return redirect()->back();
+		}
+		catch(Exception $e)
+		{
+			flash()->error($e);
+			return redirect()->back();
+		}
 	}
 
 }

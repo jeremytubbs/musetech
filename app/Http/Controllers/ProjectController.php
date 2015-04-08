@@ -61,10 +61,11 @@ class ProjectController extends Controller {
 			$project->stars = $repo['stargazers_count'];
 			$project->language = $repo['language'];
 			$project->last_updated = $updated;
+			$project->is_listed = 1;
 			$project->twitter = $twitter;
 			$project->save();
 
-			flash()->message('Project submitted for approval.');
+			flash()->message('Project submitted.');
 			return view('project.create');
 		}
 

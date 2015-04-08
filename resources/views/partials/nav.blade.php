@@ -20,8 +20,6 @@
 			<li class="uk-nav-divider"></li>
 			<li><a href="/search">Search Projects</a></li>
 			<li><a href="/project/add">Add Project</a></li>
-			<li class="uk-nav-divider"></li>
-			<li><a href="/contact">Contact</a></li>
 		</ul>
 	</div>
 </div>

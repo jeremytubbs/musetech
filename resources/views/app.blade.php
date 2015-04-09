@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="google-site-verification" content="xcZpyBKJ_Fq68S-Z_n0mbw-6BCI2V9DjxeznSCc2FEE">
+	<meta name="google-site-verification" content="xcZpyBKJ_Fq68S-Z_n0mbw-6BCI2V9DjxeznSCc2FEE" />
 	<title>musetech - Museum Technology Community</title>
 
 	<link href="{{ asset('/css/main.css') }}" rel="stylesheet">

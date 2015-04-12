@@ -70,7 +70,7 @@ class UpdateCommand extends Command {
 					$project->language = $repo['language'];
 					$project->last_updated = $updated;
 					$project->save();
-					$this->message($repo['html_url'] . ' updated.');
+					$this->info($repo['html_url'] . ' updated.');
 				}
 			}
 		});

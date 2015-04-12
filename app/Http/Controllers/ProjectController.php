@@ -45,7 +45,15 @@ class ProjectController extends Controller {
 
 		if (isset($github[0]) && isset($github[1]))
 		{
-			$repo = GitHub::repo()->show($github[0], $github[1]);
+			try
+			{
+				$repo = GitHub::repo()->show($github[0], $github[1]);
+			}
+			catch (\RuntimeException $e)
+			{
+				flash()->error($request->get('github_url') . ' ' . $e->getMessage());
+				return view('project.create');
+			}
 		}
 
 		if (isset($repo))

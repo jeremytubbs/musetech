@@ -7,6 +7,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use App\Project;
 
 use GrahamCampbell\GitHub\Facades\GitHub;
+use Carbon\Carbon;
 
 class UpdateCommand extends Command {
 
@@ -59,8 +60,6 @@ class UpdateCommand extends Command {
 
 				if (isset($repo))
 				{
-					$updated = rtrim(str_replace(array('T', 'Z'), ' ', $repo['updated_at']));
-
 					$project->github_url = $repo['html_url'];
 					$project->name = $repo['name'];
 					$project->owner = $repo['owner']['login'];
@@ -68,7 +67,7 @@ class UpdateCommand extends Command {
 					$project->homepage = $repo['homepage'];
 					$project->stars = $repo['stargazers_count'];
 					$project->language = $repo['language'];
-					$project->last_updated = $updated;
+					$project->last_updated = Carbon::parse($repo['updated_at'])->toDateTimeString();
 					$project->save();
 					$this->info($repo['html_url'] . ' updated.');
 				}

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProjectRequest;
 use App\Project;
+use Carbon\Carbon;
 
 use GrahamCampbell\GitHub\Facades\GitHub;
 
@@ -58,8 +59,6 @@ class ProjectController extends Controller {
 
 		if (isset($repo))
 		{
-			$updated = rtrim(str_replace(array('T', 'Z'), ' ', $repo['updated_at']));
-
 			$project = new Project();
 			$project->github_url = $repo['html_url'];
 			$project->name = $repo['name'];
@@ -68,7 +67,7 @@ class ProjectController extends Controller {
 			$project->homepage = $repo['homepage'];
 			$project->stars = $repo['stargazers_count'];
 			$project->language = $repo['language'];
-			$project->last_updated = $updated;
+			$project->last_updated = Carbon::parse($repo['updated_at'])->toDateTimeString();
 			$project->is_listed = 1;
 			$project->twitter = $twitter;
 			$project->save();

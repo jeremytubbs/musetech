@@ -67,7 +67,7 @@ class ProjectController extends Controller {
 			$project->homepage = $repo['homepage'];
 			$project->stars = $repo['stargazers_count'];
 			$project->language = $repo['language'];
-			$project->last_updated = Carbon::parse($repo['updated_at'])->toDateTimeString();
+			$project->last_updated = Carbon::parse($repo['pushed_at'])->toDateTimeString();
 			$project->is_listed = 1;
 			$project->twitter = $twitter;
 			$project->save();

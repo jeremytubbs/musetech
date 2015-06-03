@@ -34,7 +34,7 @@ class SlackController extends Controller {
 			'email' => urlencode($request->get('email')),
 			'first_name' => urlencode($request->get('first_name')),
 			'last_name' => urlencode($request->get('last_name')),
-			'channels' => urlencode('C0459RJ9S,C046YRQC5,C046YQQKM,C046YRS21,C046YRS5P'),
+			// 'channels' => urlencode('C0459RJ9S,C046YRQC5,C046YQQKM,C046YRS21,C046YRS5P'),
 			'token' => env('SLACK_TOKEN'),
 			'set_active' => urlencode('true'),
 			'_attempts' => '1'

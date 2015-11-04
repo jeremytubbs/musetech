@@ -66,7 +66,10 @@ class SlackController extends Controller {
 		}
 
 		$slack = new Slack();
-		$slack->fill($request->all());
+		$slack->first_name = $request->first_name;
+		$slack->last_name = $request->last_name;
+		$slack->email = $request->email;
+		$slack->twitter = isset($request->twitter) ? $request->twitter : null;
 		$slack->save();
 		\Flash::message('Invitation sent successfully!');
 

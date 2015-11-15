@@ -12,31 +12,14 @@
 */
 
 // homepage
-Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-
-// contact
-// Route::get('contact', ['as' => 'pages.contact', 'uses' => 'ContactController@getContact']);
-// Route::post('contact', ['as' => 'pages.contact', 'uses' => 'ContactController@postContact']);
+Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
 
 // slack sign up
 Route::get('sign-up', ['as' => 'slack.create', 'uses' => 'SlackController@create']);
 Route::post('sign-up', ['as' => 'slack.store', 'uses' => 'SlackController@store']);
 
-// search
-Route::get('search', ['as' => 'search', 'uses' => 'SearchController@index']);
-Route::post('search', ['as' => 'search', 'uses' => 'SearchController@results']);
-
-// project recommend
+// search projects
+Route::get('search', ['as' => 'project.search', 'uses' => 'ProjectController@index']);
+// add projects
 Route::get('project/add', ['as' => 'project.create', 'uses' => 'ProjectController@create']);
 Route::post('project/add', ['as' => 'project.store', 'uses' => 'ProjectController@store']);
-
-// routes for auth
-// Route::get('register', ['as' => 'auth.register', 'uses' => 'Auth\AuthController@getRegister']);
-// Route::post('register', 'Auth\AuthController@postRegister');
-// Route::get('login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@getLogin']);
-// Route::post('login', 'Auth\AuthController@postLogin');
-// Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@getLogout']);
-// Route::get('password/forgot', 'Auth\PasswordController@getEmail');
-// Route::post('password/forgot', 'Auth\PasswordController@postEmail');
-// Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
-// Route::post('password/reset/{token}', 'Auth\PasswordController@postReset');

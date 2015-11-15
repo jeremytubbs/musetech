@@ -1,17 +1,16 @@
-<?php namespace App;
+<?php
+
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Carbon\Carbon;
 
-class Project extends Model {
+class Project extends Model
+{
+    protected $guarded = ['id'];
+    protected $dates = ['last_updated'];
 
-	protected $table = 'projects';
-	protected $fillable = ['github_url', 'name', 'owner', 'description', 'website', 'stars', 'last_updated'];
-	protected $dates = ['last_updated'];
-
-	public function getUpdatedAttribute()
+   	public function getUpdatedAttribute()
 	{
 		return $this->last_updated->diffForHumans();
 	}
-
 }
